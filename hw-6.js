@@ -75,24 +75,21 @@ const button6 = document.getElementById('exercise-6');
 
 button6.addEventListener('click', function() {
 
-    
+    const arr2 = [9, 8, 7, 'a', 6, 5];
 
-    const getCube = (n) => {
-        
-        if (isNaN(n)) {
-            return 'Переданный параметр не является числом';
-        } else {
-            return `${n} в кубе равняется ${n ** 3}`;
-        }
-    }
+    console.log(arr2);
 
-    let n = Number(prompt('Введите число'));
-    console.log(getCube(n));
+    arr2.sort();
 
-    for (let i = 0; i <= 10; i ++) {
-        console.log(getCube(i));
-        
-    }
+    console.log(arr2);
+
+    const indexA = arr2.indexOf('a');
+
+    if (indexA !== -1) {
+        arr2.splice(indexA, 1);
+}
+
+    console.log(arr2);
 
 });
       
@@ -101,29 +98,60 @@ const button7 = document.getElementById('exercise-7');
 
 button7.addEventListener('click', function() {
 
-    function createCircle(radius) {
-        return{
-            radius,
-            getArea() {
-            return Math.PI * this.radius ** 2;
-            },
-            getPerimeter() {
-            return 2 * Math.PI * this.radius;
-            },
-        };
-    }
+   const arr3 = [9, 8, 7, 6, 5];
 
+   let searchNumber = prompt('Введите цифру от 0 до 9:');
 
-    
-    
-    const circle1 = createCircle(Number(prompt('Введите радиус первого круга')));
-    const circle2 = createCircle(Number(prompt('Введите радиус второго круга')));
-
-    console.log(`Прошадь 1-й окружности равна: ${circle1.getArea()}`);
-    console.log(`Длина 1-й окружности равна: ${circle1.getPerimeter()}`);
-    console.log(`Прошадь 2-й окружности равна: ${circle2.getArea()}`);
-    console.log(`Длина 2-й окружности равна: ${circle2.getPerimeter()}`);
-
+   if (arr3.includes(searchNumber)) {
+        console.log(`Угадал! Цифра ${searchNumber} есть в массиве.`);
+   } else {
+        console.log(`Не угадал! Цифры ${searchNumber} нет в массиве.`);
+   }
 
 });
 
+
+const button8 = document.getElementById('exercise-8');
+button8.addEventListener('click', function() {
+
+    let text = 'abcdef';
+
+    const textArr = text.split('')
+
+    console.log(textArr);
+
+    console.log(textArr.reverse());
+
+});
+
+
+const button9 = document.getElementById('exercise-9');
+button9.addEventListener('click', function() {
+
+    const arr4 = [
+       [1, 2, 3],
+       [4, 5, 6] 
+    ];
+
+    const arr5 = arr4.flat();
+
+    console.log(arr5);
+
+});
+
+
+const button10 = document.getElementById('exercise-10');
+button10.addEventListener('click', function() {
+
+    const arr6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    
+    console.log(arr6);
+
+    for (let i = 0; i < arr6.length - 1; i++) {
+        console.log(arr6[i] + arr6[i+1]);
+        
+    }
+
+
+
+});
