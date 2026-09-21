@@ -3,91 +3,71 @@ const button1 = document.getElementById('exercise-1');
 
 // Добавляем обработчик события
 button1.addEventListener('click', function() {
-    const compare = () => {
+    const Numbers = [1, 5, 4, 10, 0, 3];
 
-        let a = Number(prompt('Введите 1-ю цифру'));
-        let b = Number(prompt('Введите 2-ю цифру'));
-
-        return a >b ? a : b;
-        
+    for (let i = 0; i < Numbers.length; i++) {
+        if (Numbers[i] === 10) break;
+        console.log(Numbers[i]);
     }
 
-    console.log(compare());
 }
 );
 
 const button2 = document.getElementById('exercise-2');
 
 button2.addEventListener('click', function() {
-  const even = () => {
-    let c = Number(prompt('Введите число'));
 
-        if (c % 2 === 0) {
-            console.log(`Число ${c} четное`);
-        } else {
-            console.log(`Число ${c} не четное`);
-        }
-  }
-
-  even();
-    
+    const Numbers1 = [1, 5, 4, 10, 0, 3];  
+  
+    if (Numbers1.includes(4)) {
+    console.log(`Индекс цифры 4: ${Numbers1.indexOf(4)}`);
+    } else {
+    console.log("Цифра 4 не найдена");
+    }  
 });
 
 const button3 = document.getElementById('exercise-3');
 
 button3.addEventListener('click', function() {
     
-    let num = Number(prompt('Введите число'));
-    
-    const printSquare = (n) => {
-        
-        console.log(num ** 2);
-    
-    }
+    const Numbers2 = [1, 3, 5, 10, 20];
 
-    const getSquare = (n) => n ** 2;
+    const separateSdpaces = Numbers2.join(' ')
 
-    printSquare(num);
-
-    const result = getSquare(num);
-    console.log(result);
-     
+    console.log(separateSdpaces);
 });
 
 const button4 = document.getElementById('exercise-4');
 
 button4.addEventListener('click', function() {
-   function correctAge(age) {
-        if (age < 0) {
-            return `Вы ввели неправильное значение`;
-        } else if (age >= 0 && age <= 12) {
-            return `Привет, друг!`;
-        } else {
-            return `Добро пожаловать!`;
-        }
-   }
+   
+   const transportArray = [
+    ['Поезда', 'скоростной', 'грузовой'], 
+    ['Автомобиль', 'легковой', 'грузовой'], 
+    ['Самолет', 'пассажирский', 'транспортный']
+    ];
 
-   alert(correctAge(prompt("Сколько вам лет?")));
-    
+    for (let item of transportArray) {
+    for (let i = 0; i < item.length; i++) {
+      if (i === 0) {
+         console.log(`Тип транспорта ${item[i]}`);
+      } else {
+         console.log(`${item[0]}: ${item[i]}`);
+      }
+   }
+}
+
 });    
 
 const button5 = document.getElementById('exercise-5');
 
 button5.addEventListener('click', function() {
     
-    let d = Number(prompt('Введите первое число'));
-    let e = Number(prompt('Введите второе число'));
+    const addArr1 = [1, 1, 1];
 
-    function multiply(d, e) {
-        if (isNaN(d) || isNaN(e)) {
-            return `Одно или оба значения не являются числом`;
-        } else {
-            return d * e;
-        }
-    }
+    addArr1.push(2, 2, 2);
 
-    console.log(multiply(d, e));
-
+    console.log(addArr1);
 });
 
 
