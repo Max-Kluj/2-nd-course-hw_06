@@ -155,3 +155,78 @@ button10.addEventListener('click', function() {
 
 
 });
+
+
+const button11 = document.getElementById('exercise-11');
+button11.addEventListener('click', function() {
+
+    const input = prompt('Введите числа через запятую:');
+    
+    const arr = input.split(',').map(arr => arr * arr);
+
+    console.log(arr);
+
+});
+
+
+const button12 = document.getElementById('exercise-12');
+button12.addEventListener('click', function() {
+
+    const inputWord = prompt('Введите слова через запятую:');
+    
+    const arrWord = inputWord.split(',').map(arrWord => arrWord.trim().length);
+
+    console.log(inputWord);
+    console.log(arrWord);
+
+});
+
+
+const button13 = document.getElementById('exercise-13');
+button13.addEventListener('click', function() {
+
+    const input = prompt('Введите числа через запятую:');
+    
+    const arr = input.split(',').map(arr => arr * (- 1));
+
+    console.log(arr);
+
+});
+
+
+const button14 = document.getElementById('exercise-14');
+button14.addEventListener('click', function() {
+
+    const rand = [];
+    
+    for (let i = 0; i < 10; i++) {
+        rand.push(Number((Math.random() * 10).toFixed(0)));
+        
+    }
+
+    console.log(rand);
+
+    const even = rand.filter(rand => rand % 2 === 0);
+
+    console.log(even);
+
+});
+
+
+const button15 = document.getElementById('exercise-15');
+button15.addEventListener('click', function() {
+
+    const rand = [];
+    
+    for (let i = 0; i < 6; i++) {
+        rand.push(Number((Math.random() * 10).toFixed(0)));
+        
+    }
+
+    console.log(rand);
+
+    const even = rand.reduce((acc, cur) => acc + cur, 0) / rand.length;
+
+    console.log(even.toFixed(2));
+
+});
