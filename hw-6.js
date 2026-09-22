@@ -201,7 +201,9 @@ button13.addEventListener('click', function() {
 
     const input = prompt('Введите числа через запятую:');
     
-    const arr = input.split(',').map(arr => arr * (- 1));
+    // const arr = input.split(',').map(arr => arr * (- 1));
+
+    const arr = input.split(',').map(Number).filter(input => input < 0);
 
     console.log(arr);
 

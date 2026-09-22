@@ -21,12 +21,14 @@ function startQuiz() {
 let sumResult = 0
 
 for (let i = 0; i < quiz.length; i++) {
-    const answer = prompt(`${quiz[i].question}
+
+    while(true){
+        const answer = prompt(`${quiz[i].question}
 Выберете номер ответа: ${quiz[i].options.join(' ')}`);
     
         if (answer === null) {
             alert('Вы нажали Отмена');
-            break;
+            return;
         }
 
         if (answer.trim() === '') {
@@ -50,6 +52,8 @@ for (let i = 0; i < quiz.length; i++) {
             sumResult++;
         }
 
+        break;
+    }
 }
 
 alert(`Правильных ответов: ${sumResult} из 3-х`);
