@@ -41,21 +41,35 @@ const button4 = document.getElementById('exercise-4');
 
 button4.addEventListener('click', function() {
    
-   const transportArray = [
-    ['Поезда', 'скоростной', 'грузовой'], 
-    ['Автомобиль', 'легковой', 'грузовой'], 
-    ['Самолет', 'пассажирский', 'транспортный']
-    ];
+//    const transportArray = [
+//     ['Поезда', 'скоростной', 'грузовой'], 
+//     ['Автомобиль', 'легковой', 'грузовой'], 
+//     ['Самолет', 'пассажирский', 'транспортный']
+//     ];
 
-    for (let item of transportArray) {
-    for (let i = 0; i < item.length; i++) {
-      if (i === 0) {
-         console.log(`Тип транспорта ${item[i]}`);
-      } else {
-         console.log(`${item[0]}: ${item[i]}`);
-      }
-   }
+//     for (let item of transportArray) {
+//     for (let i = 0; i < item.length; i++) {
+//       if (i === 0) {
+//          console.log(`Тип транспорта ${item[i]}`);
+//       } else {
+//          console.log(`${item[0]}: ${item[i]}`);
+//       }
+//    }
+// }
+
+const arr = [];
+
+for (let i = 0; i < 3; i++) {
+    const inArr = [];
+
+    for (let j = 0; j < 3; j++) {
+        inArr.push(1);
+        
+    }
+    arr.push(inArr);
 }
+
+console.log(arr);
 
 });    
 
@@ -100,7 +114,7 @@ button7.addEventListener('click', function() {
 
    const arr3 = [9, 8, 7, 6, 5];
 
-   let searchNumber = prompt('Введите цифру от 0 до 9:');
+   let searchNumber = Number(prompt('Введите цифру от 0 до 9:'));
 
    if (arr3.includes(searchNumber)) {
         console.log(`Угадал! Цифра ${searchNumber} есть в массиве.`);

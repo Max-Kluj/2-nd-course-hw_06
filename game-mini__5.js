@@ -16,19 +16,42 @@ const quiz = [
            }
        ];
 
+function startQuiz() {
+
 let sumResult = 0
 
-const answer1 = prompt(`${quiz[0].question}
-Выберете номер ответа: ${quiz[0].options.join(' ')}`);
+for (let i = 0; i < quiz.length; i++) {
+    const answer = prompt(`${quiz[i].question}
+Выберете номер ответа: ${quiz[i].options.join(' ')}`);
+    
+        if (answer === null) {
+            alert('Вы нажали Отмена');
+            break;
+        }
 
-const answer2 = prompt(`${quiz[1].question}
-Выберете номер ответа: ${quiz[1].options.join(' ')}`);
+        if (answer.trim() === '') {
+            alert('Вы ввели не правильное значение, поэтому ответ не засчитан.');
+            continue;
+        }
 
-const answer3 = prompt(`${quiz[2].question}
-Выберете номер ответа: ${quiz[2].options.join(' ')}`);
+        if (isNaN(answer)) {
+            alert('Вы ввели не цифру, поэтому ответ не засчитан.');
+            continue;
+        }
 
-if (Number(answer1) === quiz[0].correctAnswer) sumResult++;
-if (Number(answer2) === quiz[1].correctAnswer) sumResult++;
-if (Number(answer3) === quiz[2].correctAnswer) sumResult++;
+        const num = Number(answer);
+
+        if (num < 1 || num > quiz[i].options.length) {
+            alert(`Такого варианта нет. Введите цифру от 1 до ${quiz[i].options.length}`);
+            continue;
+        }
+
+        if (num === quiz[i].correctAnswer) {
+            sumResult++;
+        }
+
+}
 
 alert(`Правильных ответов: ${sumResult} из 3-х`);
+
+}
